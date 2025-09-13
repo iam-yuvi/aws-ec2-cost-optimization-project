@@ -8,34 +8,20 @@ It uses **AWS Lambda**, **EventBridge Scheduler**, **IAM**, **SNS**, and **Cloud
 
 ## 🏗️ Architecture
 
-            EventBridge Scheduler (cron / rate)
-                          |
-                          V
-              Lambda: StopUnusedEC2Instances 
-                          |
-                __________________________
-                |                         |
-                V                         V
-          EC2 API (stop)           Cloud Watch Logs
-                                          |
-                                          V
-                                SNS (notification to email)
-                        
-
+                        ```bash
+                        EventBridge Scheduler (cron / rate) 
+                                    │ 
+                                    ▼ 
+                        Lambda: StopUnusedEC2Instances 
+                                    │ 
+                           ┌────────┴──────────┐ 
+                           ▼                   ▼ 
+                        EC2 API (stop)    CloudWatch Logs 
+                                               │ 
+                                               ▼ 
+                                              SNS (notification to email/SMS) 
+                        ```
 ---
-```bash
-EventBridge Scheduler (cron / rate) 
-            │ 
-            ▼ 
-Lambda: StopUnusedEC2Instances 
-            │ 
-   ┌────────┴──────────┐ 
-   ▼                   ▼ 
-EC2 API (stop)    CloudWatch Logs 
-                       │ 
-                       ▼ 
-                      SNS (notification to email/SMS) 
-```
 
 ## ✅ Prerequisites
 - AWS account with access to:
