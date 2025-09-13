@@ -8,7 +8,7 @@ It uses **AWS Lambda**, **EventBridge Scheduler**, **IAM**, **SNS**, and **Cloud
 
 ## 🏗️ Architecture
 
-                        ```bash
+                        
                         EventBridge Scheduler (cron / rate) 
                                     │ 
                                     ▼ 
@@ -20,7 +20,7 @@ It uses **AWS Lambda**, **EventBridge Scheduler**, **IAM**, **SNS**, and **Cloud
                                                │ 
                                                ▼ 
                                               SNS (notification to email/SMS) 
-                        ```
+                        
 ---
 
 ## ✅ Prerequisites
