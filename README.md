@@ -23,6 +23,19 @@ It uses **AWS Lambda**, **EventBridge Scheduler**, **IAM**, **SNS**, and **Cloud
                         
 
 ---
+```bash
+EventBridge Scheduler (cron / rate) 
+            │ 
+            ▼ 
+Lambda: StopUnusedEC2Instances 
+            │ 
+   ┌────────┴──────────┐ 
+   ▼                   ▼ 
+EC2 API (stop)    CloudWatch Logs 
+                       │ 
+                       ▼ 
+                      SNS (notification to email/SMS) 
+```
 
 ## ✅ Prerequisites
 - AWS account with access to:
