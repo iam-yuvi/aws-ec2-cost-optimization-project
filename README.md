@@ -8,11 +8,19 @@ It uses **AWS Lambda**, **EventBridge Scheduler**, **IAM**, **SNS**, and **Cloud
 
 ## 🏗️ Architecture
 
-EventBridge Scheduler ─► Lambda: StopUnusedEC2Instances ─► EC2 API (stop)
-                                         ├─► CloudWatch Logs
-                                         └─► SNS (Notifications)
-
-
+            EventBridge Scheduler (cron / rate)
+                          |
+                          V
+              Lambda: StopUnusedEC2Instances 
+                          |
+                __________________________
+                |                         |
+                V                         V
+          EC2 API (stop)           Cloud Watch Logs
+                                          |
+                                          V
+                                SNS (notification to email)
+                        
 
 ---
 
