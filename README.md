@@ -138,7 +138,7 @@ Set log retention to 7 or 30 days.
 
 (Optional) Create CloudWatch Alarms for failures or abnormal stops.
 
-**🧹 Cleanup**
+### 🧹 Cleanup
 Delete EventBridge Scheduler rule.
 
 Delete Lambda function.
@@ -149,14 +149,14 @@ Delete SNS topic.
 
 Stop/terminate test EC2 instances.
 
-**⏰ Cron Examples**
+### ⏰ Cron Examples
 Every minute (test): cron(* * * * ? *)
 
 Hourly: rate(1 hour)
 
 Daily at 9PM IST: cron(0 15 * * ? *)
 
-**📧 Notifications**
+### 📧 Notifications
 SNS sends email/SMS alerts when:
 
 Instances are stopped.
